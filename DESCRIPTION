@@ -1,9 +1,9 @@
-Package: MonashEBSTemplates
+Package: KLLabTemplates
 Version: 0.2
-Title: Monash EBS Rmarkdown Templates
-Description: This package provides Rmarkdown templates for use at Monash University, Department of Econometrics & Business Statistics.
+Title: Kang & Li Lab Rmarkdown Templates
+Description: This package provides Rmarkdown templates for use at Kang & Li Lab.
 Authors@R: person("Rob", "Hyndman", , "Rob.Hyndman@monash.edu", c("aut", "cre"))
-Imports: bookdown, binb (>= 0.0.3)
+Imports: bookdown
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

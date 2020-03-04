@@ -62,7 +62,70 @@ memo <- function(...) {
 
 #' @rdname letter
 #' @export
-slides <- function(...) {
-  binb::monash(...)
+slides <- function(toc = FALSE,
+                   slide_level = 2,
+                   incremental = FALSE,
+                   fig_width = 8,
+                   fig_height = 5,
+                   fig_crop = TRUE,
+                   fig_caption = TRUE,
+                   dev = 'pdf',
+                   df_print = "default",
+                   fonttheme = "default",
+                   colortheme = "beihangblue",
+                   highlight = "tango",
+                   keep_tex = FALSE,
+                   latex_engine = "pdflatex",
+                   citation_package = c("none", "natbib", "biblatex"),
+                   includes = NULL,
+                   md_extensions = NULL,
+                   pandoc_args = NULL,
+                   school="buaa") {
+
+  if (school=="buaa"){
+    colortheme = "beihangblue"
+    file.copy(system.file("rmarkdown", "templates", "Slides", "skeleton",
+                            "titlepage_buaa.png", package = "KLLabTemplates"),
+                "./titlepage.png", recursive = TRUE, overwrite = TRUE)
+  }
+  if (school=="cufe"){
+    colortheme = "cufeblue"
+    file.copy(system.file("rmarkdown", "templates", "Slides", "skeleton",
+                            "titlepage_cufe.png", package = "KLLabTemplates"),
+                "./titlepage.png", recursive = TRUE, overwrite = TRUE)
+  }
+  fcolortheme <- paste0("beamercolortheme",colortheme,".sty")
+  for (f in c("beamerfontthemebc.sty",fcolortheme,
+              "beamerthemebc.sty", "figs/"))
+    if (!file.exists(f))
+      file.copy(system.file("rmarkdown", "templates", "Slides", "skeleton",
+                            f, package="KLLabTemplates"),
+                ".", recursive=TRUE)
+
+  template <- system.file("rmarkdown", "templates", "Slides",
+                          "resources", "template.tex",
+                          package="KLLabTemplates")
+
+  rmarkdown::beamer_presentation(template = template,
+                                 toc = toc,
+                                 slide_level = slide_level,
+                                 incremental = incremental,
+                                 fig_width = fig_width,
+                                 fig_height = fig_height,
+                                 fig_crop = fig_crop,
+                                 fig_caption = fig_caption,
+                                 dev = dev,
+                                 df_print = df_print,
+                                 theme = "bc",
+                                 colortheme = colortheme,
+                                 fonttheme = fonttheme,
+                                 highlight = highlight,
+                                 keep_tex = keep_tex,
+                                 latex_engine = latex_engine,
+                                 citation_package = citation_package,
+                                 includes = includes,
+                                 md_extensions = md_extensions,
+                                 pandoc_args = pandoc_args)
+
 }
 
