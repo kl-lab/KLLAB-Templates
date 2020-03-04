@@ -1,19 +1,50 @@
-# monash
+# KL Lab Templates
 
-This package provides Rmarkdown templates for use at Monash University, Department of Econometrics & Business Statistics.
+## install
 
-It contains
+```R
+library("devtools")
+install_github("AngelPone/KLLabTemplates")
+```
 
- * Monash EBS working paper template
- * Monash letter template
- * Monash exam template
- * Monash consulting report template
- * Monash beamer slides (for the Monash Business School)
- * Memo template (nothing to do with Monash, but a nice format)
 
-The `slides()` function is actually a wrapper to use the `monash` template in the [`binb`](https://github.com/eddelbuettel/binb) package.
 
-There are also Monash thesis templates available:
+## Slides
 
- * PhD thesis template: https://github.com/robjhyndman/MonashThesis
- * Honours thesis template: https://github.com/robjhyndman/MonashHonoursThesis
+Usage Sample:
+
+```R
+---
+title: 北航-中财讨论组 Slides 模板
+author: 张博涵
+date: \today
+classoption: compress
+CJKmainfont: STHeitiSC-Medium # 若包含中文必须设置
+toc: true
+output: 
+  KLLabTemplates::slides: # package 中的函数
+    latex_engine: "xelatex" # 若包含中文必须设置
+    school: "cufe" # school 可选择 cufe 以及 buaa
+---
+```
+
+
+
+Buaa sample：
+
+![CleanShot 2020-03-05 at 00.41.55@2x](README.assets/CleanShot 2020-03-05 at 00.41.55@2x.png)
+
+
+
+
+
+Cufe Sample ：
+
+![CleanShot 2020-03-05 at 00.42.53@2x](README.assets/CleanShot 2020-03-05 at 00.42.53@2x.png)
+
+
+
+
+
+Forked from [robjhyndman/MonashEBSTemplates](https://github.com/robjhyndman/MonashEBSTemplates)
+
