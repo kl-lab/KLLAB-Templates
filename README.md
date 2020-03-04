@@ -32,7 +32,7 @@ output:
 
 Buaa sample：
 
-![CleanShot 2020-03-05 at 00.41.55@2x](./README.assets/CleanShot 2020-03-05 at 00.41.55@2x.png)
+![CleanShot 2020-03-05 at 00.41.55@2x](inst/sample/buaa.png)
 
 
 
@@ -40,7 +40,7 @@ Buaa sample：
 
 Cufe Sample ：
 
-![CleanShot 2020-03-05 at 00.42.53@2x](./README.assets/CleanShot 2020-03-05 at 00.42.53@2x.png)
+![CleanShot 2020-03-05 at 00.42.53@2x](inst/sample/cufe.png)
 
 
 
