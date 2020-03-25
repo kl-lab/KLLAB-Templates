@@ -8,7 +8,7 @@ toc: true
 output: 
   KLLabTemplates::slides:
     latex_engine: "xelatex"
-    school: "cufe"
+    school: "buaa"
 ---
 
 ```{r setup, include=FALSE}
