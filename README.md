@@ -4,7 +4,7 @@
 
 ```R
 library("devtools")
-install_github("AngelPone/KLLabTemplates")
+install_github("kl-lab/KLLabTemplates")
 ```
 
 
