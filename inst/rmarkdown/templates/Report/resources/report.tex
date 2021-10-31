@@ -51,10 +51,14 @@ $else$
   \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
 $endif$
 $endif$
+
 $if(CJKmainfont)$
-    \usepackage{xeCJK}
-    \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+  \usepackage{xeCJK}
+  \usepackage[yyyymmdd]{datetime}
+  \renewcommand{\dateseparator}{--}
+  \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
+
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -224,7 +228,6 @@ $endif$
 %% FONT
 \RequirePackage{bera}
 \RequirePackage[charter,expert,sfscaled]{mathdesign}
-\RequirePackage{fontawesome}
 
 %% HEADERS AND FOOTERS
 \RequirePackage{fancyhdr}
@@ -350,7 +353,7 @@ $endif$
 \DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
 \makeatother
 
-\author{$for(author)$\sf\Large\textbf{$author.title$ $author.othernames$ $author.familyname$}\\ {\sf\large $author.qualifications$\\[0.5cm]}$sep$ $endfor$}
+\author{$for(author)$\sf\Large\textbf{$author.title$ $author.othernames$ $author.familyname$}\\ $sep$ $endfor$}
 
 $if(date)$
 \date{$date$}
@@ -360,6 +363,14 @@ $endif$
 \makeatletter
 \lfoot{\sf $for(author)$$author.familyname$$sep$, $endfor$: \@date}
 \makeatother
+
+
+$if(CJKmainfont)$
+  \usepackage{xeCJK}
+  \usepackage[yyyymmdd]{datetime}
+  \renewcommand{\dateseparator}{--}
+  \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
+$endif$
 
 
 %%%% PAGE STYLE FOR FRONT PAGE OF REPORTS
@@ -384,22 +395,22 @@ $endif$
 $if(phone)$
   \telephone{$phone$}
 $else$
-  \telephone{(03) 9905 2478}
+  \telephone{(+86) 18310663288}
 $endif$
 
 $if(email)$
   \email{$email$}
 $else$
-  \email{BusEco-Econometrics@monash.edu}
+  \email{yanfeikang@buaa.edu.cn}
 $endif$
 
-\def\webaddress{\url{http://buseco.monash.edu/ebs/consulting/}}
-\def\abn{12 377 614 012}
-\def\logo{\includegraphics[width=6cm]{MBSportrait}}
+\def\webaddress{\url{http://kllab.org/}}
+
+\def\logo{\includegraphics[width=3.2cm]{logo_buaa.png}\includegraphics[width=3.2cm]{logo_cufe.png}}
 \def\extraspace{\vspace*{1.6cm}}
 \makeatletter
-\def\contactdetails{\faicon{phone} & \@telephone \\
-                    \faicon{envelope} & \@email}
+\def\contactdetails{\sf\bfseries{Phone:} & \@telephone \\
+                    \sf\bfseries{Email:} & \@email}
 \makeatother
 
 %%%% FRONT PAGE OF REPORTS
@@ -424,7 +435,6 @@ $endif$
       \begin{tabular}{@{}ll@{}}\contactdetails
       \end{tabular}
       \vspace*{0.3cm}\par
-      ABN: \abn\par
     }
   }\vss}\hss}
   \hspace*{0.2cm}

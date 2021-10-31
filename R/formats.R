@@ -42,8 +42,8 @@ workingpaper <- function(...) {
 #' @rdname letter
 #' @export
 report <- function(...) {
-  template <- system.file("rmarkdown/templates/Report/resources/monashreport.tex",
-                          package="MonashEBSTemplates")
+  template <- system.file("rmarkdown/templates/Report/resources/report.tex",
+                          package="KLLabTemplates")
   bookdown::pdf_document2(...,
                           template = template
   )
