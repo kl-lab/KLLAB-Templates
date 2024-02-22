@@ -1,10 +1,10 @@
-# KL Lab Templates
+# KLLAB Templates
 
 ## install
 
 ```R
 library("devtools")
-install_github("kl-lab/KLLabTemplates")
+install_github("kl-lab/KLLAB-Templates")
 ```
 
 
